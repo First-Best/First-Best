@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>퍼스트앤베스트의원 | First &amp; Best Clinic</title>
+  <meta name="description" content="퍼스트앤베스트의원 — 처음 상담부터 마지막 관리까지, 한결같은 마음으로 진료하는 피부과 의원입니다." />
+  <meta name="theme-color" content="#FAF7F1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== 상단 바 ===== -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="퍼스트앤베스트의원 처음으로">
+      <span class="brand-ko">퍼스트앤베스트의원</span>
+      <span class="brand-en">First &amp; Best Clinic</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#philosophy">병원 철학</a>
+      <a href="#doctor">원장 소개</a>
+      <a href="#treatments">시술 안내</a>
+      <a href="#prices">비급여 진료비</a>
+      <a href="#contact">오시는 길</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== 1. 메인 ===== -->
+    <section class="hero">
+      <div class="hero-media">
+        <img src="images/placeholder-hero.svg" alt="" />
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow">First &amp; Best Clinic</p>
+        <h1 class="hero-title" data-clinic="mainCopy">처음 마음 그대로, 끝까지 최선을</h1>
+        <p class="hero-sub" data-clinic="subCopy"></p>
+        <div class="btn-row" data-reserve-buttons></div>
+      </div>
+    </section>
+
+    <!-- ===== 2. 병원 철학 ===== -->
+    <section class="section" id="philosophy">
+      <div class="container narrow">
+        <p class="eyebrow">Philosophy</p>
+        <h2 class="section-title">First &amp; Best,<br />이름에 담은 약속</h2>
+        <div class="rule"></div>
+        <div class="philo-grid">
+          <div class="philo-item">
+            <span class="philo-en">First</span>
+            <h3>처음의 마음으로</h3>
+            <p>처음 상담에서 나눈 고민과 이야기를 끝까지 기억합니다. 첫 만남의 정성이 마지막 관리까지 이어지도록, 한 분 한 분을 처음처럼 대하겠습니다.</p>
+          </div>
+          <div class="philo-item">
+            <span class="philo-en">Best</span>
+            <h3>함께 만드는 최선</h3>
+            <p>의료진은 진료의 모든 과정에 최선을 다하고, 환자분은 그 과정에서 편안하고 충분한 설명을 받는 최선의 경험을 하실 수 있도록 하겠습니다.</p>
+          </div>
+        </div>
+        <figure class="philo-figure">
+          <img src="images/placeholder-interior.svg" alt="병원 내부 사진 (준비 중)" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 3. 원장 소개 ===== -->
+    <section class="section section-tint" id="doctor">
+      <div class="container">
+        <p class="eyebrow">Doctor</p>
+        <h2 class="section-title">원장 소개</h2>
+        <div class="rule"></div>
+        <div class="doctor" data-doctor></div>
+      </div>
+    </section>
+
+    <!-- ===== 4. 시술 안내 ===== -->
+    <section class="section" id="treatments">
+      <div class="container">
+        <p class="eyebrow">Treatments</p>
+        <h2 class="section-title">시술 안내</h2>
+        <div class="rule"></div>
+        <p class="section-lead">피부 상태와 생활 방식은 사람마다 다릅니다. 충분한 상담을 통해 꼭 필요한 시술만 함께 정하겠습니다.</p>
+
+        <div class="tabs" role="tablist" data-tabs></div>
+        <div class="cards" data-cards></div>
+
+        <p class="notice">
+          모든 시술은 개인에 따라 결과와 회복 기간이 다를 수 있으며, 붉어짐·부기·멍·색소 변화 등 부작용이 나타날 수 있습니다.
+          시술 여부는 반드시 의료진과 상담 후 결정하시기 바랍니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 5. 비급여 진료비 안내 (의료법상 항상 유지) ===== -->
+    <section class="section section-tint" id="prices">
+      <div class="container">
+        <p class="eyebrow">Non-covered Fees</p>
+        <h2 class="section-title">비급여 진료비 안내</h2>
+        <div class="rule"></div>
+        <p class="section-lead">의료법에 따라 비급여 진료 항목과 비용을 안내해 드립니다.</p>
+        <div data-prices></div>
+        <p class="notice">
+          ※ 표시된 금액은 [부가세 포함 여부 확정 예정]이며, 자세한 사항은 내원 시 상담을 통해 안내해 드립니다.<br />
+          ※ 최종 업데이트: <span data-updated>[날짜 확정 예정]</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 6. 진료 시간 · 오시는 길 ===== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="eyebrow">Hours &amp; Location</p>
+        <h2 class="section-title">진료 시간 · 오시는 길</h2>
+        <div class="rule"></div>
+        <div class="contact-grid">
+          <div class="contact-block">
+            <h3>진료 시간</h3>
+            <dl class="hours" data-hours></dl>
+            <p class="small" data-clinic="hoursNote"></p>
+          </div>
+          <div class="contact-block">
+            <h3>전화 문의</h3>
+            <p class="phone" data-phone></p>
+            <h3>주소</h3>
+            <p data-address></p>
+            <p class="small" data-clinic="directions"></p>
+            <p class="small" data-clinic="parking"></p>
+          </div>
+        </div>
+        <figure class="map">
+          <img src="images/placeholder-map.svg" alt="약도 (준비 중)" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 7. 네이버 블로그 ===== -->
+    <section class="section section-tint blog">
+      <div class="container narrow center">
+        <p class="eyebrow">Journal</p>
+        <h2 class="section-title">퍼스트앤베스트 이야기</h2>
+        <p class="section-lead">피부 관리 정보와 병원 소식을 블로그에서 전해 드립니다.</p>
+        <div class="btn-row center" data-blog-button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-brand">퍼스트앤베스트의원 <span>First &amp; Best Clinic</span></p>
+      <p class="small" data-footer-info></p>
+      <p class="small muted">본 홈페이지의 정보는 의료 상담을 대신하지 않습니다. 시술 여부는 의료진 진료 후 결정됩니다.</p>
+    </div>
+  </footer>
+
+  <!-- 모바일 하단 고정 예약 바 -->
+  <div class="mobile-bar" data-mobile-bar></div>
+
+  <!-- 데이터 파일 → 화면 그리기 -->
+  <script src="data/clinic.js"></script>
+  <script src="data/treatments.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
