@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>피부 나이 퀴즈 | 퍼스트앤베스트의원</title>
+  <meta name="description" content="생활 습관으로 돌아보는 피부 나이 퀴즈입니다. 질문 9개, 1분 정도면 끝나며 진단이 아닌 참고용 점검입니다." />
+  <meta name="theme-color" content="#FAF7F1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body class="quiz-page">
+
+  <!-- ===== 상단 바 (홈페이지와 같은 모양) ===== -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="index.html" aria-label="퍼스트앤베스트의원 홈페이지로">
+      <span class="brand-ko">퍼스트앤베스트의원</span>
+      <span class="brand-en">First &amp; Best Clinic</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="index.html#philosophy">병원 철학</a>
+      <a href="index.html#doctor">원장 소개</a>
+      <a href="index.html#treatments">시술 안내</a>
+      <a href="index.html#prices">비급여 진료비</a>
+      <a href="index.html#contact">오시는 길</a>
+      <a href="quiz.html" aria-current="page">피부 나이 퀴즈</a>
+    </nav>
+  </header>
+
+  <!-- ===== 퀴즈 (시작 → 질문 9개 → 결과, js/quiz.js 가 채움) ===== -->
+  <main id="top" class="quiz-main">
+    <div class="quiz-wrap" data-quiz>
+      <noscript><p class="quiz-empty">이 퀴즈는 브라우저의 자바스크립트가 켜져 있어야 볼 수 있습니다.</p></noscript>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-brand">퍼스트앤베스트의원 <span>First &amp; Best Clinic</span></p>
+      <p class="small" data-footer-info></p>
+      <p class="small muted">본 홈페이지의 정보는 의료 상담을 대신하지 않습니다. 시술 여부는 의료진 진료 후 결정됩니다.</p>
+    </div>
+  </footer>
+
+  <!-- 모바일 하단 고정 예약 바 (질문에 답하는 동안에는 숨김) -->
+  <nav class="mobile-bar" aria-label="예약 및 연락" data-mobile-bar></nav>
+
+  <script src="data/clinic.js"></script>
+  <script src="data/treatments.js"></script>
+  <script src="data/quiz.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

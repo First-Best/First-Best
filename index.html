@@ -30,6 +30,7 @@
       <a href="#treatments">시술 안내</a>
       <a href="#prices">비급여 진료비</a>
       <a href="#contact">오시는 길</a>
+      <a href="quiz.html">피부 나이 퀴즈</a>
     </nav>
   </header>
 
@@ -45,6 +46,7 @@
         <h1 class="hero-title" data-clinic="mainCopy">처음 마음 그대로, 끝까지 최선을</h1>
         <p class="hero-sub" data-clinic="subCopy"></p>
         <div class="btn-row" data-reserve-buttons></div>
+        <a class="hero-quiz" href="quiz.html">1분 피부 나이 퀴즈 해 보기 <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -89,6 +91,16 @@
         <h2 class="section-title">시술 안내</h2>
         <div class="rule"></div>
         <p class="section-lead">피부 상태와 생활 방식은 사람마다 다릅니다. 충분한 상담을 통해 꼭 필요한 시술만 함께 정하겠습니다.</p>
+
+        <!-- 피부 나이 퀴즈 안내 (quiz.html) -->
+        <a class="quiz-callout" href="quiz.html">
+          <span class="quiz-callout-body">
+            <span class="quiz-callout-eyebrow">Self Check</span>
+            <span class="quiz-callout-title">시술보다 먼저, 내 습관부터</span>
+            <span class="quiz-callout-text">생활 습관으로 돌아보는 1분 피부 나이 퀴즈예요. 진단이 아닌 참고용 점검입니다.</span>
+          </span>
+          <span class="quiz-callout-go">퀴즈 해 보기 <span aria-hidden="true">→</span></span>
+        </a>
 
         <div class="tabs" role="tablist" data-tabs></div>
         <div class="cards" data-cards></div>
@@ -162,7 +174,7 @@
   </footer>
 
   <!-- 모바일 하단 고정 예약 바 -->
-  <div class="mobile-bar" data-mobile-bar></div>
+  <nav class="mobile-bar" aria-label="예약 및 연락" data-mobile-bar></nav>
 
   <!-- 데이터 파일 → 화면 그리기 -->
   <script src="data/clinic.js"></script>

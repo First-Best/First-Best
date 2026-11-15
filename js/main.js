@@ -2,6 +2,7 @@
    화면 그리기 스크립트
    - data/clinic.js, data/treatments.js 의 내용을 읽어 화면에 채웁니다.
    - 내용 수정은 이 파일이 아니라 data 폴더의 파일에서 합니다.
+   - index.html 과 quiz.html(피부 나이 퀴즈)이 함께 씁니다. 상단 바·예약 버튼·푸터를 채웁니다.
    ========================================================= */
 (function () {
   var C = window.CLINIC || {};
@@ -41,14 +42,18 @@
     linkBtn(C.naverReservationUrl, "네이버 예약", "btn-primary") +
     linkBtn(C.kakaoChannelUrl, "카카오톡 상담", "btn-ghost");
   $all("[data-reserve-buttons]").forEach(function (el) { el.innerHTML = reserveHtml; });
+  // 피부 나이 퀴즈(js/quiz.js) 결과 화면도 같은 예약 버튼을 씁니다.
+  window.SITE = { reserveButtonsHtml: reserveHtml };
 
   var bar = $("[data-mobile-bar]");
   if (bar) {
-    var tel = C.phone ? '<a href="tel:' + esc(C.phone.replace(/[^0-9+]/g, "")) + '">전화</a>' : '<a href="#contact">전화</a>';
+    // 링크가 비어 있으면 '오시는 길'로 보냄 (퀴즈 페이지에는 그 섹션이 없어 홈페이지 쪽으로)
+    var contact = document.getElementById("contact") ? "#contact" : "index.html#contact";
+    var tel = C.phone ? '<a href="tel:' + esc(C.phone.replace(/[^0-9+]/g, "")) + '">전화</a>' : '<a href="' + contact + '">전화</a>';
     bar.innerHTML =
       tel +
-      (C.kakaoChannelUrl ? '<a href="' + esc(C.kakaoChannelUrl) + '" target="_blank" rel="noopener">카카오톡</a>' : '<a href="#contact">카카오톡</a>') +
-      (C.naverReservationUrl ? '<a class="is-main" href="' + esc(C.naverReservationUrl) + '" target="_blank" rel="noopener">네이버 예약</a>' : '<a class="is-main" href="#contact">네이버 예약</a>');
+      (C.kakaoChannelUrl ? '<a href="' + esc(C.kakaoChannelUrl) + '" target="_blank" rel="noopener">카카오톡</a>' : '<a href="' + contact + '">카카오톡</a>') +
+      (C.naverReservationUrl ? '<a class="is-main" href="' + esc(C.naverReservationUrl) + '" target="_blank" rel="noopener">네이버 예약</a>' : '<a class="is-main" href="' + contact + '">네이버 예약</a>');
   }
 
   /* ---------- 원장 소개 ---------- */
