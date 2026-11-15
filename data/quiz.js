@@ -150,7 +150,10 @@ window.QUIZ = {
 
   /* ---------- 마지막 질문: 피부 고민 (최대 2개) ----------
      related: data/treatments.js 의 시술 name 과 똑같이 적습니다.
-     시술 이름을 바꾸면 여기도 함께 바꿔 주세요. (없는 이름은 화면에 나오지 않습니다) */
+     시술 이름을 바꾸면 여기도 함께 바꿔 주세요. (없는 이름은 화면에 나오지 않습니다)
+     국내 허가 범위가 애매한 시술은 연결하지 않습니다 (Clinic-Guides 시술목록.md, 2026-11-15):
+     극초음파(온다)는 "통증 완화" 허가, 티타늄 리프팅(재생 레이저)은 제모 허가,
+     '서브시전 · 염증주사' 카드는 여드름 염증주사(허가 외 사용) 설명이 함께 있어 넣지 않았습니다. */
   concern: {
     question: "요즘 가장 신경 쓰이는 피부 고민을 골라 주세요.",
     help: "2개까지 고를 수 있어요.",
@@ -161,7 +164,7 @@ window.QUIZ = {
       { id: "sagging", label: "탄력·처짐", related: ["초음파", "실리프팅"] },
       { id: "pigment", label: "기미·잡티", related: ["색소 레이저"] },
       { id: "redness", label: "붉은기", related: ["혈관 레이저"] },
-      { id: "pore", label: "모공·흉터", related: ["여드름흉터 레이저", "Needle RF", "서브시전 · 염증주사"] },
+      { id: "pore", label: "모공·흉터", related: ["여드름흉터 레이저", "Needle RF"] },
       { id: "acne", label: "여드름", related: ["여드름 레이저"] },
       { id: "volume", label: "꺼진 볼륨", related: ["필러"] },
       { id: "none", label: "특별히 없어요", related: [], exclusive: true },
