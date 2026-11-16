@@ -42,8 +42,8 @@
     linkBtn(C.naverReservationUrl, "네이버 예약", "btn-primary") +
     linkBtn(C.kakaoChannelUrl, "카카오톡 상담", "btn-ghost");
   $all("[data-reserve-buttons]").forEach(function (el) { el.innerHTML = reserveHtml; });
-  // 피부 나이 퀴즈(js/quiz.js) 결과 화면도 같은 예약 버튼을 씁니다.
-  window.SITE = { reserveButtonsHtml: reserveHtml };
+  // 피부 나이 퀴즈(js/quiz.js) 결과 화면도 같은 예약 버튼과 가격표 모양을 씁니다.
+  window.SITE = { reserveButtonsHtml: reserveHtml, priceTableHtml: priceTableHtml };
 
   var bar = $("[data-mobile-bar]");
   if (bar) {
@@ -111,24 +111,30 @@
   }
 
   /* ---------- 비급여 진료비 표 (시술 목록에서 자동 생성) ---------- */
+  // 시술 목록(list)으로 가격표 하나를 만듭니다. 퀴즈 결과 화면의 '진료비 안내'도 이 함수를 씁니다.
+  function priceTableHtml(list) {
+    var rows = list.map(function (t) {
+      var items = t.items && t.items.length ? t.items : [{ name: t.name, price: "" }];
+      return items.map(function (it, idx) {
+        return "<tr>" +
+          (idx === 0 ? '<th scope="rowgroup" rowspan="' + items.length + '">' + esc(t.name) + "</th>" : "") +
+          "<td>" + esc(it.name) + "</td>" +
+          '<td class="price">' + esc(it.price || "[가격 확정 예정]") + "</td>" +
+          "</tr>";
+      }).join("");
+    }).join("");
+    return '<div class="table-wrap"><table class="price-table">' +
+      '<thead><tr><th scope="col">구분</th><th scope="col">항목</th><th scope="col">비용</th></tr></thead>' +
+      "<tbody>" + rows + "</tbody></table></div>";
+  }
+
   var priceEl = $("[data-prices]");
   if (priceEl) {
     priceEl.innerHTML = usedCats.map(function (c) {
-      var rows = T.filter(function (t) { return t.category === c.id; }).map(function (t) {
-        var items = t.items && t.items.length ? t.items : [{ name: t.name, price: "" }];
-        return items.map(function (it, idx) {
-          return "<tr>" +
-            (idx === 0 ? '<th scope="rowgroup" rowspan="' + items.length + '">' + esc(t.name) + "</th>" : "") +
-            "<td>" + esc(it.name) + "</td>" +
-            '<td class="price">' + esc(it.price || "[가격 확정 예정]") + "</td>" +
-            "</tr>";
-        }).join("");
-      }).join("");
       return '<div class="price-group">' +
         "<h3>" + esc(c.label) + "</h3>" +
-        '<div class="table-wrap"><table class="price-table">' +
-        '<thead><tr><th scope="col">구분</th><th scope="col">항목</th><th scope="col">비용</th></tr></thead>' +
-        "<tbody>" + rows + "</tbody></table></div></div>";
+        priceTableHtml(T.filter(function (t) { return t.category === c.id; })) +
+        "</div>";
     }).join("");
   }
   var upd = $("[data-updated]");
